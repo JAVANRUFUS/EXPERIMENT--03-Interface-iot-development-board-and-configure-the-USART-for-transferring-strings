@@ -2,11 +2,11 @@
 
 **DATE:**
 
-**NAME:**
+**NAME:*Javan Rufus J*
 
-**ROLL NO:**
+**ROLL NO:*212224230104*
 
-**DEPARTMENT:**
+**DEPARTMENT:*AI&DS*
 
 ## Aim:
 
@@ -90,12 +90,48 @@ UART transmits and receives data asynchronously, meaning there is no shared cloc
 
 
 ## STM 32 CUBE PROGRAM :
+'''
+#include "main.h"
+#include"stdio.h"
+#if defined (_ICCARM) || defined (_ARMCC_VERSION)
+#define PUTCHAR_PROTOTYPE int fputc(int ch, FILE *f)
+#elif defined(GNUC)
+#define PUTCHAR_PROTOTYPE int __io_putchar(int ch)
+#endif
 
+UART_HandleTypeDef huart2;
+
+void SystemClock_Config(void);
+static void MX_GPIO_Init(void);
+static void MX_USART2_UART_Init(void);
+
+int main(void)
+{
+  HAL_Init();
+  SystemClock_Config();
+
+  MX_GPIO_Init();
+  MX_USART2_UART_Init();
+  
+  while (1)
+  {
+    /* USER CODE END WHILE */
+     printf("saveetha enineering college\n");
+     printf("scoft\n");
+     HAL_Delay(500);
+  }
+}
+PUTCHAR_PROTOTYPE{
+	HAL_UART_Transmit(&huart2, (uint8_t*)&ch,1,0xFFFF);
+	return ch;
+}
+'''
 
 
 ## Output screen shots of Serial port utility   :
  
- 
+ ![434647094-3e6e9118-0f54-4d6f-b9f7-21242d60e96f](https://github.com/user-attachments/assets/b7ea8e3a-5d7f-4dc1-882d-69b775afd8ce)
+
  
  
 ## Result :
